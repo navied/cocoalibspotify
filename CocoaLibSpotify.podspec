@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.resource     =  'iOS Library/SPLoginResources.bundle'
   s.frameworks   =  'SystemConfiguration', 'CFNetwork', 'CoreAudio', 'AudioToolbox', 'AVFoundation', 'libspotify'
   s.library      =  'stdc++'
-  s.xcconfig     =  { 'OTHER_LDFLAGS' => $(inherited), '-all_load', 'FRAMEWORK_SEARCH_PATHS' => '$(PODS_ROOT)/CocoaLibSpotify/libspotify-12.1.51-iOS-universal' }
+  s.xcconfig     =  { 'OTHER_LDFLAGS' => '$(inherited)', '-all_load', 'FRAMEWORK_SEARCH_PATHS' => '$(PODS_ROOT)/CocoaLibSpotify/libspotify-12.1.51-iOS-universal' }
   s.platform     =  :ios
 
   def s.post_install(target)
