@@ -15,7 +15,6 @@ Pod::Spec.new do |s|
   s.library      =  'stdc++'
   s.xcconfig     =  { 'OTHER_LDFLAGS' => '$(inherited)' '-all_load', 'FRAMEWORK_SEARCH_PATHS' => '$(PODS_ROOT)/CocoaLibSpotify/libspotify-12.1.62-iOS-universal' }
   s.platform     =  :ios
-end
 
 def s.post_install(target)
 
