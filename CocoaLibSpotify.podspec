@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         =  'CocoaLibSpotify'
-  s.version      =  '2.4.3'
+  s.version      =  '2.4.4'
   s.author       =  'Spotify'
   s.license      =  'BSD 3-Clause'
   s.homepage     =  'https://github.com/spotify/cocoalibspotify'
@@ -9,11 +9,11 @@ Pod::Spec.new do |s|
   s.source       =  { :git => 'https://github.com/navied/cocoalibspotify.git' }
   s.requires_arc =  true
 
-  s.source_files =  'common', 'iOS Library/View Controllers', 'libspotify-12.1.62-iOS-universal/libspotify.framework/Headers'
+  s.source_files =  'common', 'iOS Library/View Controllers', 'libspotify-12.1.64-iOS-universal/libspotify.framework/Headers'
   s.resource     =  'iOS Library/SPLoginResources.bundle'
   s.frameworks   =  'SystemConfiguration', 'CFNetwork', 'CoreAudio', 'AudioToolbox', 'AVFoundation', 'libspotify'
   s.library      =  'stdc++'
-  s.xcconfig     =  { 'OTHER_LDFLAGS' => '$(inherited)' '-all_load', 'FRAMEWORK_SEARCH_PATHS' => '$(PODS_ROOT)/CocoaLibSpotify/libspotify-12.1.62-iOS-universal' }
+  s.xcconfig     =  { 'OTHER_LDFLAGS' => '$(inherited)' '-all_load', 'FRAMEWORK_SEARCH_PATHS' => '$(PODS_ROOT)/CocoaLibSpotify/libspotify-12.1.64-iOS-universal' }
   s.platform     =  :ios
 
 def s.post_install(target)
@@ -30,10 +30,10 @@ import os
 import sys
 import commands
 
-libspotifyFileName = \\"libspotify-12.1.62-iOS-universal.zip\\"
+libspotifyFileName = \\"libspotify-12.1.64-iOS-universal.zip\\"
 libspotifyRemoteLocation = \\"http://developer.spotify.com/download/libspotify/\\"
 projectDir = os.path.join(\\"#{target.sandbox_dir}\\", \\"cocoalibspotify\\")
-libspotifyDirectoryDir = os.path.join(projectDir, \\"libspotify-12.1.62-iOS-universal\\")
+libspotifyDirectoryDir = os.path.join(projectDir, \\"libspotify-12.1.64-iOS-universal\\")
 libspotifyZipDir = os.path.join(projectDir, libspotifyFileName)
 
 if (os.path.exists(libspotifyDirectoryDir)):
