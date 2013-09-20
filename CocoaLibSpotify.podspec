@@ -35,30 +35,30 @@ libspotifyDirectoryDir = os.path.join(projectDir, \\"libspotify-12.1.64-iOS-univ
 libspotifyZipDir = os.path.join(projectDir, libspotifyFileName)
 
 if (os.path.exists(libspotifyDirectoryDir)):
-#print \\"LibSpotify is present, no download needed.\\"
-sys.exit(0)
+    #print \\"LibSpotify is present, no download needed.\\"
+    sys.exit(0)
 
 print \\"LibSpotify not present, downloading...\\"
 
 try:
-urllib.urlretrieve(libspotifyRemoteLocation + libspotifyFileName, libspotifyZipDir)
+    urllib.urlretrieve(libspotifyRemoteLocation + libspotifyFileName, libspotifyZipDir)
 except OSError:
-print \\"Could not download \\" + libspotifyRemoteLocation + libspotifyFileName + \\".\\"
-sys.exit(1)
+    print \\"Could not download \\" + libspotifyRemoteLocation + libspotifyFileName + \\".\\"
+    sys.exit(1)
 
 unzipCommand = 'unzip -q \\"' + libspotifyZipDir + '\\"' + ' -d \\"' + projectDir + '\\"'
 unzipResult = commands.getstatusoutput(unzipCommand)
 
 if (unzipResult[0] != 0):
-print \\"Could not untar \\" + libspotifyFileName + \\".\\"
-sys.exit(1)
+    print \\"Could not untar \\" + libspotifyFileName + \\".\\"
+    sys.exit(1)
 
-commands.getstatusoutput('rm -rf \\"' + projectDir + '/__MACOSX\\"')
+commands.getstatusoutput('rm -rf \\"' + projectDir + '/__MACOSX\\"') 
 
 try:
-os.remove(libspotifyZipDir)
+    os.remove(libspotifyZipDir)
 except OSError:
-print \\"Could not remove downloaded file.\\"
+    print \\"Could not remove downloaded file.\\"
 
 print \\"Complete.\\"
 "
